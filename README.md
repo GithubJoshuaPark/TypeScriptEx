@@ -50,17 +50,20 @@ Why TypeScript?
 
 ```bash
 # Project structure
-TypeScriptEx
-├─ package.json
-├─ tsconfig.json
-├─ main.ts
-├─ utils.ts
-└─ lessons
-   ├─ lesson01.ts
-   ├─ lesson02.ts
-   ├─ ...
-   └─ lesson30.ts
+typeScriptEx/
+├── main.ts                 # 메인 진입점 (메뉴 시스템)
+├── utils.ts                # 공통 유틸리티 함수
+├── lessons/                # 30개의 레슨 파일
+│   ├── lesson01.ts
+│   ├── lesson02.ts
+│   └── ... (lesson30.ts까지)
+├── dist/                   # 컴파일된 JavaScript 파일
+├── package.json
+├── tsconfig.json
+└── make_empty_lesson_files.sh  # 레슨 파일 생성 스크립트
+```
 
+```bash
 npm init -y
 npm install --save-dev typescript @types/node
 
@@ -101,6 +104,49 @@ npm install --save-dev typescript @types/node
         "./**/*.ts"
     ]
 }
+```
+
+```bash
+  🎯 주요 구성 요소
+  1. main.ts - 메뉴 시스템
+    - 30개의 레슨 목록을 표시하는 대화형 메뉴
+    - 사용자가 번호를 입력하면 해당 레슨을 동적으로 로드하여 실행
+    - readline 모듈을 사용한 터미널 입력/출력 처리
+    - 각 레슨의
+      run(rl, title)
+      함수를 호출
+  2. utils.ts - 공통 유틸리티
+    - getRandomEmoji(): 랜덤 이모지 생성 (메뉴와 레슨에서 사용)
+    - f_pause(rl): 사용자가 Enter를 누를 때까지 일시정지
+    - ask(rl, question)
+  : 사용자 입력을 받는 헬퍼 함수
+```
+
+🛠️ 기술 스택
+ES Modules 사용
+json
+{
+  "type": "module",  // package.json
+  "module": "NodeNext",  // tsconfig.json
+  "moduleResolution": "NodeNext"
+}
+중요한 차이점:
+
+❌ CommonJS: __filename, __dirname, require()
+✅ ES Modules: import.meta.url, fileURLToPath(), import
+TypeScript 설정
+Target: ES2022
+Strict Mode: 활성화
+출력: dist/ 폴더에 컴파일된 .js 파일 생성
+
+```bash
+실행 흐름:
+
+1. tsc 명령으로 모든 .ts 파일을 .js로 변환 → dist/ 폴더
+2. node dist/main.js 실행
+3. 메뉴에서 레슨 번호 입력
+4. 동적 import로 해당 레슨 모듈 로드
+5. 레슨의 run() 함수 실행
 ```
 
 ---

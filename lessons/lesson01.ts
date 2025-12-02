@@ -12,7 +12,13 @@ export async function run(rl: readline.Interface, title: string): Promise<void> 
     console.log(`${getRandomEmoji()} --- ${baseNoExt}:${title} ---`);
     console.log('');
 
-    console.log('TODO: 레슨 내용을 구현해주세요.');
+    const message: string = "TypeScript 학습을 시작합니다 🚀";
+    const year: number = 2025;
+    const isFun: boolean = true;
+
+    console.log("message:", message);
+    console.log("year:", year);
+    console.log("isFun:", isFun);
 
     console.log('');
     console.log(`${getRandomEmoji()} 레슨을 완료했습니다!`);
