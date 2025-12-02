@@ -1,0 +1,185 @@
+# ===============================
+# Node.js
+# ===============================
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# package-lock.json (removed)
+yarn.lock
+
+# ===============================
+# Environment Variables
+# ===============================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ===============================
+# Logs
+# ===============================
+logs/
+*.log
+npm-debug.log*
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ===============================
+# Runtime Data
+# ===============================
+lib-cov
+coverage/
+.nyc_output/
+.grunt
+bower_components
+
+# ===============================
+# Testing
+# ===============================
+.coverage
+.cache
+*.lcov
+.nyc_output
+
+# ===============================
+# Build Output
+# ===============================
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+
+# ===============================
+# IDE & Editors
+# ===============================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# ===============================
+# macOS
+# ===============================
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ===============================
+# Windows
+# ===============================
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# ===============================
+# Linux
+# ===============================
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ===============================
+# Temporary Files
+# ===============================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*.swp
+*.swo
+
+# ===============================
+# Project Specific
+# ===============================
+# 테스트 파일 (필요시)
+test-output/
+temp/
+tmp/
+
+# 사용자 데이터 (레슨에서 생성될 수 있는 파일들)
+*.txt
+!README.txt
+*.json
+!package.json
+!package-lock.json
+!tsconfig.json
+
+# 레슨에서 생성되는 임시 파일
+lessons/output/
+lessons/temp/
+lessons/*.txt
+lessons/*.json
+
+# ===============================
+# Optional
+# ===============================
+# TypeScript (향후 사용 시)
+*.tsbuildinfo
+
+# ESLint
+.eslintcache
+
+# Prettier
+.prettierignore
+
+# Jest
+jest.config.js
