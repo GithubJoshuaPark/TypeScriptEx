@@ -160,3 +160,23 @@ npm run start # run node dist/main.js
 > 변환된 js 파일들은 node.js 환경에서 실행됩니다.
 
 ---
+
+## JavaScript에서 `null` vs `undefined` 비교
+
+### 📊 비교 표
+
+| 구분 | `null` | `undefined` |
+|------|--------|-------------|
+| **의미** | "값이 없음"을 **명시적으로** 나타냄 | "값이 할당되지 않음"을 나타냄 |
+| **타입** | `object` (역사적 버그) | `undefined` |
+| **할당 방식** | 개발자가 **의도적으로** 할당 | 자동으로 할당됨 (기본값) |
+| **사용 시나리오** | 값을 비우고 싶을 때 | 변수 선언만 하고 초기화 안 했을 때 |
+| **함수 반환값** | 명시적으로 `return null` | `return` 없거나 `return;`만 있을 때 |
+| **객체 프로퍼티** | 명시적으로 `obj.key = null` | 존재하지 않는 프로퍼티 접근 시 |
+| **함수 매개변수** | 명시적으로 `func(null)` | 인자를 전달하지 않았을 때 |
+| **JSON 지원** | ✅ 지원 (`JSON.stringify`) | ❌ 지원 안 됨 (생략됨) |
+| **typeof 결과** | `"object"` | `"undefined"` |
+| **== 비교** | `null == undefined` → `true` | `null == undefined` → `true` |
+| **=== 비교** | `null === undefined` → `false` | `null === undefined` → `false` |
+| **Boolean 변환** | `false` (falsy) | `false` (falsy) |
+| **숫자 변환** | `0` | `NaN` |
