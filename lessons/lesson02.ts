@@ -34,6 +34,8 @@ export async function run(rl: readline.Interface, title: string): Promise<void> 
 
     console.log("");
 
+    await f_pause(rl);
+
     // ========================================
     // 2. string 타입
     // ========================================
@@ -57,6 +59,8 @@ export async function run(rl: readline.Interface, title: string): Promise<void> 
 
     console.log("");
 
+    await f_pause(rl);
+
     // ========================================
     // 3. boolean 타입
     // ========================================
@@ -75,6 +79,8 @@ export async function run(rl: readline.Interface, title: string): Promise<void> 
     // isActive = 1;  // Error: Type 'number' is not assignable to type 'boolean'
 
     console.log("");
+
+    await f_pause(rl);
 
     // ========================================
     // 4. any 타입 (타입 체크 비활성화)
@@ -98,6 +104,8 @@ export async function run(rl: readline.Interface, title: string): Promise<void> 
 
     console.log("");
 
+    await f_pause(rl);
+
     // ========================================
     // 5. 타입 명시 vs 타입 추론
     // ========================================
@@ -113,6 +121,8 @@ export async function run(rl: readline.Interface, title: string): Promise<void> 
     // inferredNumber = "문자열";  // Error: Type 'string' is not assignable to type 'number'
 
     console.log("");
+
+    await f_pause(rl);
 
     // ========================================
     // 6. 실전 예제: 사용자 정보
