@@ -9,7 +9,7 @@ import { getRandomEmoji, f_pause } from "../utils.js";
 export async function run(rl: readline.Interface, title: string): Promise<void> {
     let filePath = `${basename(fileURLToPath(import.meta.url))}`;
     let baseNoExt = basename(filePath, '.js');
-    console.log(`${getRandomEmoji()} --- ${baseNoExt}:${title} ---`);
+    console.log(`${getRandomEmoji()} --- ${baseNoExt}: ${title} ---`);
     console.log('');
 
     console.log('TODO: 레슨 내용을 구현해주세요.');
