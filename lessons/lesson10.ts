@@ -7,10 +7,7 @@ import { basename } from "node:path";
 import { fileURLToPath } from "node:url";
 import { getRandomEmoji, f_pause, f_printCodeBlock } from "../utils.js";
 
-export async function run(
-    rl: readline.Interface,
-    title: string
-): Promise<void> {
+export async function run(rl: readline.Interface, title: string): Promise<void> {
     const filePath = `${basename(fileURLToPath(import.meta.url))}`;
     const baseNoExt = basename(filePath, ".js");
 
