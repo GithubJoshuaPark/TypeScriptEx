@@ -9,8 +9,26 @@ Why TypeScript?
 - 문서화(Documentation): 타입 정보를 통해 코드의 의도를 문서화
 - 유지보수(Maintenance): 타입 시스템을 통해 코드의 일관성을 유지
 
+> 🕹️ 몇 해 전에 TypeScript를 사용하지 말자는 해외 IT 유튜버들의 컨텐츠를 보고
+   (당시에도 지금도 Front-end 개발자들이 TypeScript를 여전히 많이 사용합니다.) 그들의 주장이 들어보고 했습니다만,
+   TypeScript의 장점들을 다시 한번 확인해보니
+   사람이 코딩하는 시대가 끝나기 전까지는
+   TypeScript (Microsoft에서 만들었죠)를 사용하는 것이 나은 것에 결론을 내렸습니다.
+
+```
+🕹️ Trade-off :
+  1. 초기 개발 속도 저하 및 학습 곡선,
+  2. 타입스크립트의 정적 타입 검사는 컴파일 시점에만 이루어지므로
+     런타임 오류를 방지하지 못할 수 있습니다.
+  3. 외부 API 호출이나 동적 데이터 처리와 같이 '타입이 지정되지 않은 경계'에서는
+     여전히 런타임 오류가 발생할 수 있습니다
+  4. 간단한 유틸리티 스크립트와 같이 규모가 작은 프로젝트에서는 타입 안전성으로 인한
+     이득이 미미할 수 있습니다.
+```
+
 ---
 
+```bash
 (기초 → 중급 → 고급/실전)
 🔹 1단계: 기초 Fundamentals (1–10)
 1. Hello TypeScript – ts-node 환경에서 첫 출력하기
@@ -47,6 +65,12 @@ Why TypeScript?
 28. Node.js + TypeScript 프로젝트 구조 설계
 29. tsconfig 고급 옵션 이해 (paths, baseUrl, strict 등)
 30. TypeScript로 라이브러리/SDK 개발하기 (d.ts 포함)
+```
+
+---
+![menu.png](menu.png)
+
+---
 
 ```bash
 # Project structure

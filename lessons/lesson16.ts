@@ -127,11 +127,6 @@ sp.sayHello();`
         }
     }
 
-    const acc = new Account("Joshua", "ACC-12345", 100_000);
-    acc.deposit(50_000);
-    console.log("조회된 잔액:", acc.getBalance());
-    // acc.balance  // ❌ private 이라서 외부에서 접근 불가
-
     f_printCodeBlock(
         "접근 제한자 예제",
         `class Account {
@@ -161,6 +156,11 @@ sp.sayHello();`
 }`
     );
 
+    const acc = new Account("Joshua", "ACC-12345", 100_000);
+    acc.deposit(50_000);
+    console.log("조회된 잔액:", acc.getBalance());
+    // acc.balance  // ❌ private 이라서 외부에서 접근 불가
+
     console.log("");
     await f_pause(rl);
 
@@ -186,9 +186,6 @@ sp.sayHello();`
         }
     }
 
-    const sa = new SavingsAccount("Joshua", "SAV-90001", 500_000, 3);
-    sa.addInterest();
-
     f_printCodeBlock(
         "상속 & super 예제",
         `class SavingsAccount extends Account {
@@ -211,6 +208,9 @@ sp.sayHello();`
 const sa = new SavingsAccount("Joshua", "SAV-90001", 500_000, 3);
 sa.addInterest();`
     );
+
+    const sa = new SavingsAccount("Joshua", "SAV-90001", 500_000, 3);
+    sa.addInterest();
 
     console.log("");
     await f_pause(rl);
@@ -241,12 +241,6 @@ sa.addInterest();`
         }
     }
 
-    const d = new Dog("초코");
-    const c = new Cat("나비");
-
-    d.speak();
-    c.speak();
-
     f_printCodeBlock(
         "메서드 오버라이딩 예제",
         `class Animal {
@@ -276,6 +270,12 @@ d.speak(); // 🐶 초코: 멍멍!
 c.speak(); // 🐱 나비: 야옹~`
     );
 
+    const d = new Dog("초코");
+    const c = new Cat("나비");
+
+    d.speak();
+    c.speak();
+
     console.log("");
     await f_pause(rl);
 
@@ -294,8 +294,6 @@ c.speak(); // 🐱 나비: 야옹~`
         new Animal("???")
     ];
 
-    makeAllSpeak(animals);
-
     f_printCodeBlock(
         "다형성 예제",
         `function makeAllSpeak(animals: Animal[]): void {
@@ -311,6 +309,7 @@ const animals: Animal[] = [
 makeAllSpeak(animals);`
     );
 
+    makeAllSpeak(animals);
     console.log("");
     await f_pause(rl);
 
@@ -327,8 +326,6 @@ makeAllSpeak(animals);`
         }
     }
 
-    const area = MathUtil.circleArea(10);
-
     f_printCodeBlock(
         "static 필드/메서드 예제",
         `class MathUtil {
@@ -342,6 +339,7 @@ makeAllSpeak(animals);`
 const area = MathUtil.circleArea(10);`
     );
 
+    const area = MathUtil.circleArea(10);
     console.log("원 넓이 (r=10):", area);
     console.log("");
     console.log("💡 static:");
