@@ -1,8 +1,11 @@
 # ✅ TypeScript Step-by-Step — 30 Example Source Titles
 
+[![TypeScript Fundamentals](https://img.shields.io/badge/TypeScript-Fundamentals-blue)](https://github.com/joshuapark/TypeScriptEx)
+
 ### TypeScript Fundamentals
 
 Why TypeScript?
+
 - 타입 추론(Type Inference): 타입을 명시적으로 선언하지 않아도, TypeScript가 코드를 분석하여 타입을 추론하는 기능
 - 타입 체크(Type Checking): 컴파일 시점에서 타입 오류를 검출하여 런타임 오류를 방지
 - 코드 자동완성(Autocomplete): IDE에서 타입 정보를 기반으로 코드를 자동완성
@@ -10,10 +13,10 @@ Why TypeScript?
 - 유지보수(Maintenance): 타입 시스템을 통해 코드의 일관성을 유지
 
 > 🕹️ 몇 해 전에 TypeScript를 사용하지 말자는 해외 IT 유튜버들의 컨텐츠를 보고
-   (당시에도 지금도 Front-end 개발자들이 TypeScript를 여전히 많이 사용합니다.) 그들의 주장이 들어보고 했습니다만,
-   TypeScript의 장점들을 다시 한번 확인해보니
-   사람이 코딩하는 시대가 끝나기 전까지는
-   TypeScript (Microsoft에서 만들었죠)를 사용하는 것이 나은 것에 결론을 내렸습니다.
+> (당시에도 지금도 Front-end 개발자들이 TypeScript를 여전히 많이 사용합니다.) 그들의 주장이 들어보고 했습니다만,
+> TypeScript의 장점들을 다시 한번 확인해보니
+> 사람이 코딩하는 시대가 끝나기 전까지는
+> TypeScript (Microsoft에서 만들었죠)를 사용하는 것이 나은 것에 결론을 내렸습니다.
 
 ```
 🕹️ Trade-off :
@@ -68,6 +71,7 @@ Why TypeScript?
 ```
 
 ---
+
 ![menu.png](menu.png)
 
 ---
@@ -150,13 +154,13 @@ npm install --save-dev typescript @types/node
 ES Modules 사용
 json
 {
-  "type": "module",  // package.json
-  "module": "NodeNext",  // tsconfig.json
-  "moduleResolution": "NodeNext"
+"type": "module", // package.json
+"module": "NodeNext", // tsconfig.json
+"moduleResolution": "NodeNext"
 }
 중요한 차이점:
 
-❌ CommonJS: __filename, __dirname, require()
+❌ CommonJS: **filename, **dirname, require()
 ✅ ES Modules: import.meta.url, fileURLToPath(), import
 TypeScript 설정
 Target: ES2022
@@ -180,7 +184,7 @@ npm run build # build js files into dist folder
 npm run start # run node dist/main.js
 ```
 
-> 결국, *.ts 파일들은 tsc (TypeScript compiler)를 통해 *.js 파일로 변환됩니다.
+> 결국, _.ts 파일들은 tsc (TypeScript compiler)를 통해 _.js 파일로 변환됩니다.
 > 변환된 js 파일들은 node.js 환경에서 실행됩니다.
 
 ---
@@ -189,18 +193,18 @@ npm run start # run node dist/main.js
 
 ### 📊 비교 표
 
-| 구분 | `null` | `undefined` |
-|------|--------|-------------|
-| **의미** | "값이 없음"을 **명시적으로** 나타냄 | "값이 할당되지 않음"을 나타냄 |
-| **타입** | `object` (역사적 버그) | `undefined` |
-| **할당 방식** | 개발자가 **의도적으로** 할당 | 자동으로 할당됨 (기본값) |
-| **사용 시나리오** | 값을 비우고 싶을 때 | 변수 선언만 하고 초기화 안 했을 때 |
-| **함수 반환값** | 명시적으로 `return null` | `return` 없거나 `return;`만 있을 때 |
-| **객체 프로퍼티** | 명시적으로 `obj.key = null` | 존재하지 않는 프로퍼티 접근 시 |
-| **함수 매개변수** | 명시적으로 `func(null)` | 인자를 전달하지 않았을 때 |
-| **JSON 지원** | ✅ 지원 (`JSON.stringify`) | ❌ 지원 안 됨 (생략됨) |
-| **typeof 결과** | `"object"` | `"undefined"` |
-| **== 비교** | `null == undefined` → `true` | `null == undefined` → `true` |
-| **=== 비교** | `null === undefined` → `false` | `null === undefined` → `false` |
-| **Boolean 변환** | `false` (falsy) | `false` (falsy) |
-| **숫자 변환** | `0` | `NaN` |
+| 구분              | `null`                              | `undefined`                         |
+| ----------------- | ----------------------------------- | ----------------------------------- |
+| **의미**          | "값이 없음"을 **명시적으로** 나타냄 | "값이 할당되지 않음"을 나타냄       |
+| **타입**          | `object` (역사적 버그)              | `undefined`                         |
+| **할당 방식**     | 개발자가 **의도적으로** 할당        | 자동으로 할당됨 (기본값)            |
+| **사용 시나리오** | 값을 비우고 싶을 때                 | 변수 선언만 하고 초기화 안 했을 때  |
+| **함수 반환값**   | 명시적으로 `return null`            | `return` 없거나 `return;`만 있을 때 |
+| **객체 프로퍼티** | 명시적으로 `obj.key = null`         | 존재하지 않는 프로퍼티 접근 시      |
+| **함수 매개변수** | 명시적으로 `func(null)`             | 인자를 전달하지 않았을 때           |
+| **JSON 지원**     | ✅ 지원 (`JSON.stringify`)          | ❌ 지원 안 됨 (생략됨)              |
+| **typeof 결과**   | `"object"`                          | `"undefined"`                       |
+| **== 비교**       | `null == undefined` → `true`        | `null == undefined` → `true`        |
+| **=== 비교**      | `null === undefined` → `false`      | `null === undefined` → `false`      |
+| **Boolean 변환**  | `false` (falsy)                     | `false` (falsy)                     |
+| **숫자 변환**     | `0`                                 | `NaN`                               |
